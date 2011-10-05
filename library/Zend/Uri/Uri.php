@@ -806,6 +806,7 @@ class Uri
      */
     public static function validateHost($host, $allowed = self::HOST_ALL)
     {
+        $host = str_replace("#", '', $host);
         if ($allowed & self::HOST_REGNAME) {
             if (static::isValidRegName($host)) {
                 return true;
@@ -1111,6 +1112,7 @@ class Uri
      */
     protected static function isValidDnsHostname($host)
     {
+        echo "Y".$host."Y";
         $validator = new Validator\Hostname(array(
             'allow' => Validator\Hostname::ALLOW_DNS | Validator\Hostname::ALLOW_LOCAL,
         ));
