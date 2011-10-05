@@ -1112,7 +1112,6 @@ class Uri
      */
     protected static function isValidDnsHostname($host)
     {
-        echo "Y".$host."Y";
         $validator = new Validator\Hostname(array(
             'allow' => Validator\Hostname::ALLOW_DNS | Validator\Hostname::ALLOW_LOCAL,
         ));
